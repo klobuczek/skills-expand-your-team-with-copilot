@@ -1,0 +1,105 @@
+name: Feature Request
+description: Request a new feature or capability for the activities system
+title: "[Feature]: "
+labels: ["enhancement", "feature-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request
+        Use this form to request new functionality for the school activities system.
+        This could be new capabilities, tools, or features that don't currently exist.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: What new feature would you like?
+      description: Describe the new functionality you'd like to see
+      placeholder: Tell us what new feature you need. For example, "Allow students to see their registered activities" or "Add ability to send notifications to activity participants"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-solving
+    attributes:
+      label: What problem does this solve?
+      description: Explain why this feature is needed
+      placeholder: Tell us what problem or need this feature addresses. For example, "Teachers spend too much time manually tracking which students are in which activities"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: Who will use this feature?
+      description: Select who would benefit from this feature
+      options:
+        - Students
+        - Teachers
+        - Both students and teachers
+        - Administrators
+        - Everyone
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-priority
+    attributes:
+      label: How important is this feature?
+      description: Select the priority level
+      options:
+        - Critical - We need this to operate effectively
+        - High - This would significantly improve our work
+        - Medium - This would be helpful to have
+        - Low - This is a nice-to-have
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-workaround
+    attributes:
+      label: How do you handle this now?
+      description: Describe your current workaround or process
+      placeholder: Tell us how you currently deal with this situation without the feature
+
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested Implementation
+      description: If you have ideas about how this could work, share them
+      placeholder: For example, "Add a button on the activities page that shows a student's registered activities" or "Send an email notification when a student signs up"
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples from Other Systems
+      description: Have you seen similar features in other systems that work well?
+      placeholder: Describe or provide examples if you've seen something similar elsewhere
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details we should know?
+      placeholder: Add any extra information here
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The new feature should work as described
+        - The feature should integrate smoothly with existing functionality
+        - The feature should be easy to use for the intended users
+        - Documentation should be updated if needed
+        - The feature should not break existing functionality
+
+        ### Technical Notes for Implementation
+        - Determine if changes are needed to backend (`src/backend/`), frontend (`src/static/`), or both
+        - Consider database schema changes in `src/backend/database.py` if data storage is needed
+        - Add new API endpoints in `src/backend/routers/` if backend functionality is required
+        - Update UI components in `src/static/` (HTML, CSS, JavaScript) for frontend changes
+        - Ensure the feature follows existing patterns and conventions
+        - Consider security implications, especially for teacher-only features
+        - Plan for error handling and edge cases
+        - Consider impact on existing data and migrations if needed

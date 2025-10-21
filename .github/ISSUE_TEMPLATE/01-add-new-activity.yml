@@ -1,0 +1,108 @@
+name: Add New Activity
+description: Request to add a new extracurricular activity to the school system
+title: "[New Activity]: "
+labels: ["enhancement", "activity"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Add a New Activity
+        Use this form to request a new extracurricular activity be added to the school activities system.
+        Please provide as much detail as possible to help us set up the activity correctly.
+
+  - type: input
+    id: activity-name
+    attributes:
+      label: Activity Name
+      description: What is the name of the new activity?
+      placeholder: e.g., Cooking Club, Volleyball Team, Science Fair Preparation
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Activity Description
+      description: Provide a detailed description of the activity (what students will do, goals, etc.)
+      placeholder: Tell us what this activity is about and what students will learn or do
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What category does this activity belong to?
+      options:
+        - Sports
+        - Arts
+        - Academic
+        - Community
+        - Technology
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: schedule-days
+    attributes:
+      label: Days of the Week
+      description: Select all days when this activity will meet
+      options:
+        - label: Monday
+        - label: Tuesday
+        - label: Wednesday
+        - label: Thursday
+        - label: Friday
+        - label: Saturday
+        - label: Sunday
+
+  - type: input
+    id: start-time
+    attributes:
+      label: Start Time
+      description: When does the activity start? (Use 24-hour format like 15:30 for 3:30 PM)
+      placeholder: e.g., 15:30 for 3:30 PM, 07:00 for 7:00 AM
+    validations:
+      required: true
+
+  - type: input
+    id: end-time
+    attributes:
+      label: End Time
+      description: When does the activity end? (Use 24-hour format like 17:00 for 5:00 PM)
+      placeholder: e.g., 17:00 for 5:00 PM, 08:30 for 8:30 AM
+    validations:
+      required: true
+
+  - type: input
+    id: max-participants
+    attributes:
+      label: Maximum Number of Participants
+      description: What is the maximum number of students who can join?
+      placeholder: e.g., 20
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details we should know? (location, equipment needed, special requirements, etc.)
+      placeholder: Add any extra information here
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The new activity should appear in the activities list on the website
+        - Students should be able to sign up for the activity
+        - The activity should be filterable by category, day, and time
+        - All provided details should be displayed correctly
+
+        ### Technical Notes for Implementation
+        - Add the activity to the `initial_activities` dictionary in `src/backend/database.py`
+        - Ensure the activity follows the existing data structure with all required fields
+        - The schedule should be formatted correctly in both human-readable and structured formats
+        - Initialize with an empty participants list

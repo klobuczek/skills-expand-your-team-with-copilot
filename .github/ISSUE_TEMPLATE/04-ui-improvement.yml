@@ -1,0 +1,103 @@
+name: UI/Visual Improvement
+description: Request visual changes or improvements to the website appearance
+title: "[UI]: "
+labels: ["enhancement", "ui"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## UI/Visual Improvement Request
+        Use this form to request changes to how the website looks.
+        This could be colors, layout, fonts, spacing, or other visual elements.
+
+  - type: textarea
+    id: current-appearance
+    attributes:
+      label: What needs to change?
+      description: Describe what currently doesn't look right or could be improved
+      placeholder: Tell us what you'd like to change about how things look. For example, "The activity cards are too small" or "The colors are hard to read"
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-appearance
+    attributes:
+      label: How should it look instead?
+      description: Describe your desired visual outcome
+      placeholder: Tell us how you'd like it to look. Be as specific as possible.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ui-area
+    attributes:
+      label: What part of the website?
+      description: Where should this visual change be made?
+      options:
+        - Header/Title area
+        - Activities list/cards
+        - Filter sidebar
+        - Sign-up forms
+        - Login page
+        - Colors/theme
+        - Fonts/text size
+        - Spacing/layout
+        - Mobile view
+        - Entire website
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How important is this change?
+      description: Select the priority level
+      options:
+        - High - This makes the site hard to use
+        - Medium - This would improve the experience
+        - Low - This is a nice-to-have
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Why is this change needed?
+      description: Explain the reason for this visual improvement
+      placeholder: For example, "Teachers have trouble reading the current text color" or "Students complain the buttons are hard to find"
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or References
+      description: Do you have any examples of what you'd like? (websites, screenshots, sketches)
+      placeholder: Describe or provide links to examples if you have any
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other visual details we should know?
+      placeholder: Add any extra information here
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The visual changes should be implemented as described
+        - The website should remain easy to use
+        - Changes should work well on different screen sizes (desktop, tablet, mobile)
+        - The overall design should remain consistent
+        - Text should remain readable with good contrast
+
+        ### Technical Notes for Implementation
+        - CSS changes should be made in `src/static/styles.css`
+        - HTML structure changes (if needed) should be made in `src/static/index.html`
+        - Ensure responsive design is maintained for mobile devices
+        - Test visual changes in multiple browsers if possible
+        - Consider accessibility standards (color contrast, font sizes)
+        - Maintain consistency with existing design patterns

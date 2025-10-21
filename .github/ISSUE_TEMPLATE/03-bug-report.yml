@@ -1,0 +1,102 @@
+name: Report a Bug
+description: Report a problem with the activities system
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Report a Bug
+        Use this form to report problems or errors with the school activities system.
+        The more details you provide, the easier it will be to fix the issue.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What is not working?
+      description: Describe the problem you're experiencing in simple terms
+      placeholder: Tell us what's going wrong. For example, "Students can't sign up for Math Club" or "The schedule for Drama Club shows the wrong days"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What should happen instead?
+      description: Describe what you expected to happen
+      placeholder: Tell us what should be working correctly
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: What part of the system is affected?
+      description: Select where the problem occurs
+      options:
+        - Viewing activities list
+        - Signing up for activities
+        - Filtering activities (by category, day, or time)
+        - Activity details display
+        - Teacher login
+        - Website layout/appearance
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: affected-activity
+    attributes:
+      label: Affected Activity (if applicable)
+      description: Is this problem related to a specific activity?
+      placeholder: e.g., Chess Club, Soccer Team (leave blank if not activity-specific)
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: How can we see this problem?
+      description: List the steps to make the problem happen
+      placeholder: |
+        1. Go to the activities page
+        2. Click on 'Chess Club'
+        3. Try to sign up a student
+        4. Error message appears
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this happen?
+      description: Does this problem occur every time or only sometimes?
+      options:
+        - Every time
+        - Sometimes
+        - Only once
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Information
+      description: Any other details that might help? (screenshots, error messages, etc.)
+      placeholder: Add any extra information here, such as error messages you saw
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### Acceptance Criteria
+        - The reported issue should be fixed
+        - The system should work as expected after the fix
+        - Similar problems should be prevented in the future
+        - No new issues should be introduced by the fix
+
+        ### Technical Notes for Investigation
+        - Review the specific code area mentioned in the "affected area" field
+        - Test the steps to reproduce to confirm the issue
+        - Check for similar issues in other parts of the codebase
+        - Ensure the fix doesn't break existing functionality
+        - Consider edge cases related to the reported problem
